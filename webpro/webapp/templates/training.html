@@ -1,0 +1,111 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Training{% endblock title %}
+
+{% block body %}}
+<style>
+  /* Navbar styling */
+  .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background: rgba(0, 0, 0, 0.85);
+      transition: background-color 0.5s;
+  }
+  .navbar:hover {
+      background-color: rgba(0, 0, 0, 1);
+  }
+  .navbar-brand img {
+      animation: bounce 1s infinite;
+  }
+
+  /* Animated glow effect */
+  .animated-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4CAF50;
+      animation: glow 1.5s infinite alternate;
+  }
+  @keyframes glow {
+      0% { text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50; }
+      100% { text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50; }
+  }
+
+  /* Video animation styling */
+  .fade-in-video {
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      margin-bottom: 20px;
+  }
+  @keyframes fadeIn {
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  .fade-in-video:nth-child(odd) { animation-delay: 0.3s; }
+  .fade-in-video:nth-child(even) { animation-delay: 0.5s; }
+
+  /* Carousel enhancements */
+  .carousel-item img {
+      filter: brightness(0.9);
+      transition: transform 1s ease-in-out;
+  }
+  .carousel-item:hover img {
+      transform: scale(1.05);
+  }
+
+  /* Search button styling */
+  .form-inline .btn-outline-primary {
+      border-color: #4CAF50;
+      color: #4CAF50;
+      transition: all 0.3s;
+  }
+  .form-inline .btn-outline-primary:hover {
+      background-color: #4CAF50;
+      color: white;
+  }
+
+  /* Footer styling */
+  .footer {
+      background: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+  }
+</style>
+
+<body>
+       <!-- Training Section -->
+    <h1 class="text-center mt-4">This is the Training page</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 fade-in-video">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" controls autoplay muted loop>
+                        <source src="/static/videos/ludo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-center animated-text">Learn and Play</div>
+            </div>
+            <div class="col-md-6 fade-in-video">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" controls autoplay muted loop>
+                        <source src="/static/videos/snake.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-center animated-text pulse">Pulsing Content</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2024 LudoKing. All Rights Reserved.</p>
+    </footer>
+
+{% endblock body %}

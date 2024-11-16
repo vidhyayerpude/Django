@@ -1,0 +1,85 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}vontact{% endblock title %}
+
+{% block body %}}
+<style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+      }
+      /* Background and border styling */
+      body {
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      }
+      .contact-container {
+       background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease;
+    max-width: 600px;
+    margin: auto;
+
+      }
+      .contact-container h1 {
+        font-size: 2.5rem;
+        color: #343a40;
+        font-weight: bold;
+        text-align: center;
+      }
+      .btn-primary {
+        border-radius: 20px;
+        font-weight: bold;
+        transition: transform 0.2s;
+      }
+      .btn-primary:hover {
+        transform: scale(1.05);
+      }
+      .form-group input, .form-group textarea {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+      }
+      .form-group input:focus, .form-group textarea:focus {
+        border-color: #495057;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+
+
+  <body>
+
+    <div class="container my-5 contact-container">
+      <h1>user form</h1>
+      <div class ="row">
+        <div class="col-12">
+          <form  method="post">
+            {%csrf_token %}
+            <div>
+              <label for="">Value1</label>
+              <input type="text" name="num1" value ="{{n1}}" class="form-control">
+            </div> <div>
+              <label for="">Value2</label>
+              <input type="text" name="num2"   value="{{n2}}" class="form-control">
+            </div>
+            <div class="pt-4">
+            <button type="submit">save</button>
+            </div>
+            output
+            <input type ="text" value="{{output}}"/>
+          </form>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  {% endblock body %}

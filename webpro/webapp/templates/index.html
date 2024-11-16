@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% block title %}welcome to royalplay{% endblock title %}
+
+{% block body %}}
+<style>
+      /* Background and Navbar */
+      body {
+        background: linear-gradient(135deg, #f0f0f5, #c4d3e2);
+      }
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+      }
+      .navbar-brand {
+        font-weight: bold;
+      }
+
+      /* Carousel and Cards */
+      .carousel-inner img {
+        filter: brightness(80%);
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-inner img:hover {
+        transform: scale(1.05);
+      }
+      .card {
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: none;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Fade-in animations */
+      .fade-in {
+        opacity: 0;
+        animation: fadeInUp 1.5s ease forwards;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Button Hover Animation */
+      .btn-outline-primary {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #ffffff;
+      }
+
+      /* Video Animation */
+      .fade-in-video {
+        opacity: 0;
+        animation: fadeIn 1.5s ease-in-out forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+   /* Enhanced Footer Card Styles */
+.enhanced-footer-card {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.enhanced-footer-card:hover {
+  transform: scale(1.05);
+}
+
+.gradient-header,
+.gradient-footer {
+  background: linear-gradient(135deg, #00c6ff 0%, #ff7300 100%); /* Teal to orange */
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  color: #2d2d2d;
+}
+
+.animated-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  background-color: #ff7300;
+  color: #fff;
+  border: 2px solid #00c6ff;
+}
+
+.animated-button:hover {
+  background-color: #00c6ff;
+  color: #ff7300;
+  transform: scale(1.1);
+  border: 2px solid #ff7300;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+    </style>
+
+  <body>
+  <!-- Cards Section -->
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col mb-4 fade-in">
+        <div class="card">
+          <img src="/static/images/dices.png" class="card-img-top" alt="Dices" height="300px">
+          <div class="card-body">
+            <h5 class="card-title">Ludo Dice</h5>
+            <p class="card-text">Experience the excitement of rolling the dice and advancing in Ludo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 fade-in" style="animation-delay: 0.2s;">
+        <div class="card">
+          <img src="/static/images/l5.jpg" class="card-img-top" alt="Ludo Game" height="300px">
+          <div class="card-body">
+            <h5 class="card-title">Ludo Game</h5>
+            <p class="card-text">Play and enjoy the traditional board game with friends and family.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 fade-in" style="animation-delay: 0.4s;">
+        <div class="card">
+          <img src="/static/images/l6.jpg" class="card-img-top" alt="Game Strategy" height="300px">
+          <div class="card-body">
+            <h5 class="card-title">Game Strategy</h5>
+            <p class="card-text">Learn strategies to become the best Ludo player.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 fade-in" style="animation-delay: 0.6s;">
+        <div class="card">
+          <img src="/static/images/l7.jpg" class="card-img-top" alt="Game Tips" height="300px">
+          <div class="card-body">
+            <h5 class="card-title">Game Tips</h5>
+            <p class="card-text">Get tips to improve your gameplay and increase your winning chances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos Section -->
+  <div class="container mt-5 fade-in">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="embed-responsive embed-responsive-16by9 fade-in-video">
+          <video class="embed-responsive-item" controls autoplay muted loop>
+            <source src="/static/videos/ludo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 fade-in" style="animation-delay: 0.4s;">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="embed-responsive embed-responsive-16by9 fade-in-video">
+          <video class="embed-responsive-item" controls autoplay muted loop>
+            <source src="/static/videos/snake.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enhanced Footer Card -->
+<div class="card text-center my-5 fade-in enhanced-footer-card">
+  <div class="card-header gradient-header">
+    Exclusive Feature
+  </div>
+  <div class="card-body">
+    <h5 class="card-title display-4 font-weight-bold text-primary">Join the Fun!</h5>
+    <p class="card-text lead">Experience classic games with modern features. Adventure awaits!</p>
+    <a href="/register" class="btn btn-outline-light btn-lg animated-button">Register Now</a>
+  </div>
+  <div class="card-footer gradient-footer text-white">
+    © 2024 LudoKing, All Rights Reserved.
+  </div>
+</div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+
+ {% endblock body %}
